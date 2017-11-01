@@ -17,8 +17,8 @@
 
 ### Association
 - has_many :massages
-- has_many :menbers
-- has_many :groups, through: :menbers
+- has_many :members
+- has_many :groups, through: :members
 
 
 ##groupsテーブル
@@ -26,8 +26,8 @@
 
 ### Association
 - has_many :messages
-- has_many :menbers
-- has_many :users, through: :menbers
+- has_many :members
+- has_many :users, through: :members
 
 ## membersテーブル
 
