@@ -14,18 +14,18 @@
 ##usersテーブル
 
 |name|string|index: true, null: false|
-|address|string|unique: true|
-|pass|string|null: false|
 |image|string|
 
 ### Association
 - has_many :massages
+- has_many :groups
 
 ##groupテーブル
 |name|string|null: false|
 
 ### Association
 - has_many :messages
+- has_many :users
 
 ## membersテーブル
 
