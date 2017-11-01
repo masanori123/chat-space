@@ -17,14 +17,17 @@
 
 ### Association
 - has_many :massages
-- has_many :groups
+- has_many :menbers
+- has_many :groups, through: :menbers
+
 
 ##groupsテーブル
 |name|string|null: false|
 
 ### Association
 - has_many :messages
-- has_many :users
+- has_many :menbers
+- has_many :users, through: :menbers
 
 ## membersテーブル
 
