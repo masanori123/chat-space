@@ -8,19 +8,18 @@
 |user_id|integer|null: false, freign_key: true|
 
 ### Association
-- belongs_to :users
+- belongs_to :user
 - belongs_to :group
 
 ##usersテーブル
 
 |name|string|index: true, null: false|
-|image|string|
 
 ### Association
 - has_many :massages
 - has_many :groups
 
-##groupテーブル
+##groupsテーブル
 |name|string|null: false|
 
 ### Association
