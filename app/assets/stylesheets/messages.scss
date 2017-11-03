@@ -20,7 +20,7 @@
       position: absolute;
       top: 0;
       bottom: 0;
-      .chat-side__user-name {
+      &-name {
         color: #fff;
         font-size: 20px;
         font-weight: bold;
@@ -28,13 +28,13 @@
         position: relative;
         display: inline-block;
       }
-      .chat-side__user--new-group {
+      &--new-group {
         color: #fff;
         margin-left: 90px;
         position: relative;
         display: inline-block;
       }
-      .chat-side__user--edit-user {
+      &--edit-user {
         color: #fff;
         position: relative;
         display: inline-block;
@@ -45,15 +45,15 @@
     height: 85%;
     width: 100%;
     background-color: #2f3e51;
-    .chat-side__groups-list {
+    &-list {
       height: 100%;
       color: #fff;
-      .chat-side__group {
+      &__group {
          padding: 20px;
-        .chat-side__group-name {
+        &--name {
           font-size: 15px;
         }
-        .chat-side__group-message {
+        &-message {
           font-size: 11px;
         }
       }
@@ -76,7 +76,7 @@
         padding: 35px 0 15 0px;
         float: left;
       }
-      .chat-main__header--gruop-edit-btn {
+      &-edit-btn {
         color: #38AEF0;
         font-size:  15px;
         padding: 0px 20px;
@@ -84,7 +84,7 @@
         border: 1px solid #38AEF0;
         float: right;
       }
-      .chat-main__header-members {
+      &-members {
         font-size: 12px;
         color: #999;
         clear: both;
@@ -95,23 +95,23 @@
     height: calc( 100vh - 15% - 90px);
     overflow-y: scroll;
     width: 100%;
-    .chat-main__body--message-list {
+    &--message-list {
       padding-top: 26px;
       padding-left: 40px;
-      .chat-main__message {
+      &__message {
         padding: 20px 0;
-        .chat-main__message-name {
+        &-name {
           font-size: 16px;
           color: 434A54;
           float: left;
         }
-        .chat-main__message-time {
+        &-time {
           font-size: 12px;
           color: #999;
           float: left;
           padding: 0 10px 10px;
         }
-        .chat-main__message-body {
+        &-body {
           color: #434A54;
           clear: both;
           font-size: 14px;
@@ -119,16 +119,16 @@
       }
     }
   }
-  .chat-main__footer {
+  &__footer {
     height: 90px;
     width: 100%;
     background-color: #B8C3C7;
-    .chat-main__footer-form {
+    &-form {
       margin: 0 40px;
       padding: 20px 0 20px 0;
       height: 100%;
       position: relative;
-      .chat-main__footer-body {
+      &-body {
         position: relative;
         height: 100%;
         #message_body {
@@ -156,7 +156,7 @@
           width: 100px;
           height: 50px;
           text-align: center;
-          margin: 0 auto;
+          margin: 0;
           position: absolute;
           top: 0;
           right: 0;
