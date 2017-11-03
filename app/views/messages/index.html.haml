@@ -1,0 +1,54 @@
+.notification
+  %p chat group
+
+.chat-side
+
+  .chat-side__user
+    .chat-side__user-content
+      .chat-side__user-name
+        %p name
+      .chat-side__user--new-group
+        %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+      .chat-side__user--edit-user
+        %i.fa.fa-cog{"aria-hidden" => "true"}
+
+  .chat-side__groups
+    .chat-side__groups-list
+      .chat-side__group
+        .chat-side__groups--name
+          %p sample
+        .chat-side__groups-message
+          %p aa
+
+.chat-main
+  .chat-main__header
+    .chat-main__header--group
+      .chat-main__header--group-name
+        %p name
+      .chat-main__header--gruop-edit-btn
+        %p edit
+      .chat-main__header-members
+        %p aaaaa
+
+  .chat-main__body
+    .chat-main__body--message-list
+      .chat-main__message
+        .chat-main__message-name
+          %p name
+        .chat-main__message-time
+          %p time
+        .chat-main__message-body
+          %p message
+
+  .chat-main__footer
+    %form.chat-main__footer-form
+      .chat-main__footer-body
+        %input#message_body.message{:name => "message[body]", :placeholder => "type a message", :type => "text"}/
+        %label.chat-file{:for => "message_image"}
+          %input#message_image.image{:name => "message[image]", :type => "file"}/
+          %i.fa.fa-image
+        %input.submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+
+
+
+
