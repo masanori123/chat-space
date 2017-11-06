@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'messages' => 'messages#index'
+  root    'messages#index'
+  get     'messages'       => 'messages#index'
+  get     'users/:id/edit' => 'users#edit'
+  patch   'users/:id'      => 'users#update'
 end
