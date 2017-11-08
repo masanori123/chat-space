@@ -1,5 +1,3 @@
-.notification
-  %p chat group
 
 .chat-side
 
@@ -10,7 +8,9 @@
       .chat-side__user-content--new-group
         %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
       .chat-side__user-content--edit-user
-        %i.fa.fa-cog{"aria-hidden" => "true"}
+        = link_to edit_user_path(current_user) do
+          %span.fa.fa-cog
+
 
   .chat-side__groups
     .chat-side__groups-list
