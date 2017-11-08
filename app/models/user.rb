@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :name, presence: true, length: { maximum: 50 }
+  has_many :massages
+  has_many :members
+  has_many :groups, through: :members
 end
