@@ -13,5 +13,10 @@ class GroupsController < ApplicationController
   end
 
   def update
+    if @user.id == current_user.id
+      @user.update(users_params)
+      redirect_to root_path
+    else
+      render :edit
   end
 end
