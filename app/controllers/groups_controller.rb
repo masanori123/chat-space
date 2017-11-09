@@ -9,7 +9,11 @@ class GroupsController < ApplicationController
 
   def create
     Group.create(group_params)
-    redirect_to controller: :messages, action: :index
+    if
+      redirect_to root_path, notice: 'グループを作成しました'
+    else
+      render :new
+    end
   end
 
   def edit
