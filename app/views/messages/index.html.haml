@@ -14,9 +14,11 @@
 
   .chat-side__groups
     .chat-side__groups-list
-      .chat-side__groups-list__group
-        .chat-side__groups-list__group--name
-        .chat-side__groups-list__group-message
+      - @groups.each do |group|
+        .chat-side__groups-list__group
+          .chat-side__groups-list__group--name
+            = group.name
+          .chat-side__groups-list__group-message
 
 .chat-main
   .chat-main__header
