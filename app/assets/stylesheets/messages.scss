@@ -63,6 +63,9 @@
          padding: 20px;
         &--name {
           font-size: 15px;
+          &__link {
+            color: white;
+          }
         }
         &-message {
           font-size: 11px;
