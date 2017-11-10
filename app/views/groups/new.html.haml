@@ -1,11 +1,11 @@
 .chat-group-form
   %h1 新規チャットグループ
   = form_for @group do |f|
-    .chat-group-form__errors
-      %h2
-        1件のエラーが発生しました。
+    - if @group.errors.any?
+      .chat-group-form__errors
         %ul
-          %li エラーです
+          - @group.errors.full_messages.each do |message|
+            %li= message
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         = f.label :for, "グループ名", class: "chat-group-form__label"
@@ -40,4 +40,4 @@
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
-        %input.chat-group-form__action-btn{"data-disable-with" => "Save", :name => "commit", :type => "submit", :value => "Save"}/
+        = f.submit "data-disable-with" => "Save", :name => "commit",:value => "Save"
