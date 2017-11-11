@@ -15,7 +15,7 @@
       - @groups.each do |group|
         .chat-side__groups-list__group
           .chat-side__groups-list__group--name
-            = link_to group.name, 'groups', class: "chat-side__groups-list__group--name__link"
+            = link_to group.name, group_messages_path(group), class: "chat-side__groups-list__group--name__link"
           .chat-side__groups-list__group-message
 
 .chat-main
