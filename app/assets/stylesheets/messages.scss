@@ -137,12 +137,12 @@
     height: 90px;
     width: 100%;
     background-color: #B8C3C7;
-    &-form {
+    .new_message {
       margin: 0 40px;
       padding: 20px 0 20px 0;
       height: 100%;
       position: relative;
-      &-body {
+      .chat-main__footer-form-body {
         position: relative;
         height: 100%;
         #message_body {

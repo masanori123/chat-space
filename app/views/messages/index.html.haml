@@ -15,7 +15,7 @@
       - @groups.each do |group|
         .chat-side__groups-list__group
           .chat-side__groups-list__group--name
-            = link_to group.name, 'groups', class: "chat-side__groups-list__group--name__link"
+            = link_to group.name, group_messages_path(group), class: "chat-side__groups-list__group--name__link"
           .chat-side__groups-list__group-message
 
 .chat-main
@@ -39,10 +39,10 @@
           %p message
 
   .chat-main__footer
-    %form.chat-main__footer-form
+    = form_for [@group, @message] do |f|
       .chat-main__footer-form-body
-        %input#message_body.message{:name => "message[body]", :placeholder => "type a message", :type => "text"}/
-        %label.chat-file{:for => "message_image"}
-          %input#message_image.image{:name => "message[image]", :type => "file"}/
+        = f.text_field :body, placeholder: "type a message", id: "message_body"
+        = f.label :for, class: "chat-file" do
+          - f.file_field :image, id: "message_image"
           %i.fa.fa-image
-        %input.submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+        = f.submit "Send", class: "submit"
