@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to controller: :messages, action: :index
     else
-      redirect_to group_message_path(params[:group_id])
+      redirect_to group_messages_path(params[:group_id]), alert: 'メッセージを入力してください'
     end
   end
 
