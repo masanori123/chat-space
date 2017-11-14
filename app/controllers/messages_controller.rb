@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
+    @messages = @group.messages
   end
 
   def create
@@ -26,4 +27,3 @@ class MessagesController < ApplicationController
   end
 
 end
-
