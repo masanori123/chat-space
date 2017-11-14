@@ -39,10 +39,9 @@
           %p message
 
   .chat-main__footer
-    %form.chat-main__footer-form
+    = form_for [@group, @message] do |f|
       .chat-main__footer-form-body
-        %input#message_body.message{:name => "message[body]", :placeholder => "type a message", :type => "text"}
-        %label.chat-file{:for => "message_image"}
-          %input#message_image.image{:name => "message[image]", :type => "file"}/
-          %i.fa.fa-image
-        %input.submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}
+        = f.text_field :body, placeholder: "type a message"
+        = f.label :image, fa_icon("image"), class: "chat-file"
+        = f.file_field :image
+        = f.submit "Send"
