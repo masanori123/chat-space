@@ -17,32 +17,3 @@
           .chat-side__groups-list__group--name
             = link_to group.name, group_messages_path(group), class: "chat-side__groups-list__group--name__link"
           .chat-side__groups-list__group-message
-
-.chat-main
-  .chat-main__header
-    .chat-main__header--group
-      .chat-main__header--group-name
-        %p name
-      .chat-main__header--group-edit-btn
-        %p edit
-      .chat-main__header--group-members
-        %p aaaaa
-
-  .chat-main__body
-    .chat-main__body--message-list
-      .chat-main__body--message-list__message
-        .chat-main__body--message-list__message-name
-          %p name
-        .chat-main__body--message-list__message-time
-          %p time
-        .chat-main__body--message-list__message-body
-          %p message
-
-  .chat-main__footer
-    %form.chat-main__footer-form
-      .chat-main__footer-form-body
-        %input#message_body.message{:name => "message[body]", :placeholder => "type a message", :type => "text"}/
-        %label.chat-file{:for => "message_image"}
-          %input#message_image.image{:name => "message[image]", :type => "file"}/
-          %i.fa.fa-image
-        %input.submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
