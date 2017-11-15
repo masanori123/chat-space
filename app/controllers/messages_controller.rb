@@ -12,6 +12,7 @@ class MessagesController < ApplicationController
       redirect_to controller: :messages, action: :index
     else
       flash.now[:alert] = "メッセージを入力してください"
+      @messages = @group.messages
       render :index
     end
   end
