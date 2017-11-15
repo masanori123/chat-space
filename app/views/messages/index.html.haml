@@ -38,7 +38,8 @@
             = m.created_at
           .chat-main__body--message-list__message-body
             = m.body
-            = image_tag m.image, class: "chat-main__message-body-image"
+            - unless m.image.blank?
+              = image_tag m.image, class: "chat-main__message-body-image"
 
   .chat-main__footer
     = form_for [@group, @message] do |f|
