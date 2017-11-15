@@ -1,5 +1,4 @@
 .chat-side
-
   .chat-side__user
     .chat-side__user-content
       .chat-side__user-content-name
@@ -17,6 +16,13 @@
           .chat-side__groups-list__group--name
             = link_to group.name, group_messages_path(group), class: "chat-side__groups-list__group--name__link"
           .chat-side__groups-list__group-message
+            - if group.messages.present?
+              - if group.messages.last.body.present?
+                = group.messages.last.body
+              - else
+              %p 画像が投稿されています
+            - else
+              = "まだメッセージはありません"
 
 .chat-main
   .chat-main__header
