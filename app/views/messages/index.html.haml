@@ -31,12 +31,15 @@
   .chat-main__body
     .chat-main__body--message-list
       .chat-main__body--message-list__message
-        .chat-main__body--message-list__message-name
-          %p name
-        .chat-main__body--message-list__message-time
-          %p time
-        .chat-main__body--message-list__message-body
-          %p message
+        - @messages.each do |m|
+          .chat-main__body--message-list__message-name
+            = m.user.name
+          .chat-main__body--message-list__message-time
+            = m.created_at
+          .chat-main__body--message-list__message-body
+            = m.body
+            - unless m.image.blank?
+              = image_tag m.image, class: "chat-main__message-body-image"
 
   .chat-main__footer
     = form_for [@group, @message] do |f|
