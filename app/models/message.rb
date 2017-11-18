@@ -8,6 +8,9 @@ class Message < ApplicationRecord
 
   private
     def body_or_image
+      unless body.presence or image.presence
+        errors.add(:body, "エラーです")
+      end
       body.presence or image.presence
     end
 end
