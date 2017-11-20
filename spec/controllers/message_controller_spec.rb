@@ -3,7 +3,7 @@ require 'rails_helper'
 describe MessagesController, type: :controller do
   let(:user) { create(:user) }
   let(:group) { create(:group) }
-  let(:groups) { create(:groups)}
+  let(:groups) { user.groups }
   let(:message) { create(:message)}
   let(:messages) { crate(:messages)}
   let(:group_id) do
@@ -27,6 +27,10 @@ describe MessagesController, type: :controller do
 
     it 'assigns the requested group to @group' do
       expect(assigns(:group)).to eq group
+    end
+
+    it 'assigns the requested messsage to @groups' do
+      expect(assigns(:groups)).to eq groups
     end
   end
 end
