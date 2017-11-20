@@ -17,20 +17,27 @@ describe MessagesController, type: :controller do
       get :index, params: {group_id: group.id}
     end
 
-    it "assigns the requested contact to @groups" do
-      expect(assigns(:group)).to eq group
-    end
+    context 'login' do
 
-    it 'assigns the requested messsage to @message' do
-      expect(assigns(:message)).to be_a_new(Message)
-    end
+      it "assigns the requested contact to @groups" do
+        expect(assigns(:group)).to eq group
+      end
 
-    it 'assigns the requested messsage to @groups' do
-      expect(assigns(:groups)).to eq groups
-    end
+      it 'assigns the requested messsage to @message' do
+        expect(assigns(:message)).to be_a_new(Message)
+      end
 
-    it 'assigns the requested messsages to @messages' do
-      expect(assigns(:messages)).to eq messages
+      it 'assigns the requested messsage to @groups' do
+        expect(assigns(:groups)).to eq groups
+      end
+
+      it 'assigns the requested messsages to @messages' do
+        expect(assigns(:messages)).to eq messages
+      end
+
+      it 'renders the :index template' do
+        expect(response).to render_template :index
+      end
     end
   end
 end
