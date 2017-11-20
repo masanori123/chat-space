@@ -9,6 +9,9 @@ describe MessagesController, type: :controller do
   let(:group_id) do
     { prams: { gtoup_id: group.id, message: attributes_for(:message)}}
   end
+  let(:params) do
+    { params: { group_id: group.id, message: attributes_for(:message) } }
+  end
 
   describe 'GET #index' do
     let(:params) {{ group_id: group.id }}
@@ -44,6 +47,18 @@ describe MessagesController, type: :controller do
 
       it 'redirects to new_user_session_path' do
         redirect_to new_user_session_path
+      end
+    end
+  end
+
+  describe 'POST #create' do
+    context 'user loged-in and successfully saved' do
+      before do
+        login_user user
+      end
+
+      it 'saves the new message in the database' do
+        expect{post :create, params}.to change(Message, :count).by(1)
       end
     end
   end
