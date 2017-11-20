@@ -60,6 +60,11 @@ describe MessagesController, type: :controller do
       it 'saves the new message in the database' do
         expect{post :create, params}.to change(Message, :count).by(1)
       end
+
+      it 'redirects to messages#index' do
+        post :create, params
+        expect(response).to redirect_to group_messages_path
+      end
     end
   end
 end
