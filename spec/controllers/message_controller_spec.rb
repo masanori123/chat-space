@@ -25,12 +25,12 @@ describe MessagesController, type: :controller do
       expect(assigns(:message)).to be_a_new(Message)
     end
 
-    it 'assigns the requested group to @group' do
-      expect(assigns(:group)).to eq group
-    end
-
     it 'assigns the requested messsage to @groups' do
       expect(assigns(:groups)).to eq groups
+    end
+
+    it 'assigns the requested messsages to @messages' do
+      expect(assigns(:messages)).to eq messages
     end
   end
 end
