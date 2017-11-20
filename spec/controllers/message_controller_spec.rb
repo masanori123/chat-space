@@ -5,7 +5,7 @@ describe MessagesController, type: :controller do
   let(:group) { create(:group) }
   let(:groups) { user.groups }
   let(:message) { create(:message)}
-  let(:messages) { crate(:messages)}
+  let(:messages) { group.messages}
   let(:group_id) do
     { prams: { gtoup_id: group.id, message: attributes_for(:message)}}
   end
@@ -37,6 +37,13 @@ describe MessagesController, type: :controller do
 
       it 'renders the :index template' do
         expect(response).to render_template :index
+      end
+    end
+
+    context 'not login' do
+
+      it 'redirects to new_user_session_path' do
+        redirect_to new_user_session_path
       end
     end
   end
