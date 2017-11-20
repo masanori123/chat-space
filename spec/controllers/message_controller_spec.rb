@@ -66,6 +66,7 @@ describe MessagesController, type: :controller do
         expect(response).to redirect_to group_messages_path
       end
     end
+
     context 'user loged-in but missed saved' do
       before do
         login_user user
