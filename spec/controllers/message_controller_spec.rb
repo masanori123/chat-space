@@ -66,5 +66,16 @@ describe MessagesController, type: :controller do
         expect(response).to redirect_to group_messages_path
       end
     end
+    context 'user loged-in but missed saved' do
+      before do
+        login_user user
+      end
+
+      it 'unsave the new message in the database' do
+        expect{
+          post :create, params: { group_id: group.id, message: attributes_for(:message, body: nil, image: nil) }
+        }.to change(Message, :count).by(0)
+      end
+    end
   end
 end
