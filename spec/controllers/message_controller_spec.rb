@@ -7,7 +7,7 @@ describe MessagesController, type: :controller do
   let(:message) { create(:message)}
   let(:messages) { group.messages}
   let(:group_id) do
-    { prams: { gtoup_id: group.id, message: attributes_for(:message)}}
+    { prams: { group_id: group.id, message: attributes_for(:message)}}
   end
   let(:params) do
     { params: { group_id: group.id, message: attributes_for(:message) } }
