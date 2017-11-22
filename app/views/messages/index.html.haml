@@ -30,8 +30,8 @@
 
   .chat-main__body
     .chat-main__body--message-list
-      .chat-main__body--message-list__message
-        - @messages.each do |m|
+      - @messages.each do |m|
+        .chat-main__body--message-list__message
           .chat-main__body--message-list__message-name
             = m.user.name
           .chat-main__body--message-list__message-time
