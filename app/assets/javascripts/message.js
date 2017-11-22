@@ -30,22 +30,7 @@ $(function() {
     .done(function(data) {
       var html = buildHTML(data);
       $('.chat-main__body--message-list').append(html)
-      // $('.chat-main__body--message-list__message').animate({
-      //   "color": "red",
-      //   'marginTop': '200px'
-      // });
-      // function getScrollTop(){
-      //   $("#message").text($(window).scrollTop() + $(window).height() + 'px');
-      // }
-      // $(window).on("load scroll resize", getScrollTop);
-      // $('#message').scrollTop()
-      // function goBottom(targetId) {
-      //   var target = $("#message" + targetId);
-      //   $(window).scrollTop(target.offset().top);
-      // }
       var $messages = $('.chat-main__body');
-      console.log($messages[0].scrollHeight);
-      // console.log($messages.scrollHeight);
       $messages.animate({
         scrollTop: $messages[0].scrollHeight
       }, 1500);
