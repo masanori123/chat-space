@@ -64,4 +64,10 @@ $(function() {
     $('.chat-group-user').remove();
       appendAddUser(user_id, user_name);
   });
+
+  $(document).on("click", ".chat-group-user__btn--remove", function() {
+    var user_id = $(this).data("user_id");
+    var user_name = $(this).data("user-name");
+    $('#chat-group-user-8').remove();
+  })
 });
