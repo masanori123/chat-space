@@ -34,6 +34,9 @@ $(function() {
      else {
        appendNoUser("一致するユーザーはいません");
      }
-   })
+    })
+    .fail(function(){
+      alert('error');
+    })
   });
 });
