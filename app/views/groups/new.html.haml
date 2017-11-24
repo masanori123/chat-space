@@ -25,8 +25,7 @@
         #chat-group-users
           #chat-group-user-22.chat-group-user.clearfix
             %input{name: "chat_group[user_ids][]", type: "hidden", value: "current_user"}
-            %p.chat-group-user__name masa
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-      .chat-group-form__field--right
+      .chat-group-form__field--right#user-search-result-add
         = f.submit "data-disable-with" => "Save", :name => "commit",:value => "Save"
