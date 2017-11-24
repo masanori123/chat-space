@@ -15,15 +15,7 @@ $(function() {
     $("#user-search-result").append(html);
   }
 
-  function appendUser(user) {
-    var html = `<div class="chat-group-user clearfix">
-                  <p class="chat-group-user__name">${user.name}</p>
-                  <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${ user.name }">追加</a>
-                </div>`
-    $("#user-search-result").append(html);
-  }
-
-  function appendAddUser(user_id, user_name) {
+  function appendChatGroupUsers(user_id, user_name) {
     var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
                   <input name='group[user_ids][]' type='hidden' value='${user_id}'>
                   <p class='chat-group-user__name'>${user_name}</p>
@@ -43,8 +35,7 @@ $(function() {
     })
 
     .done(function(users_data) {
-      console.log(users_data);
-     if (users_data.length !== 0) {
+     if (users_data.length) {
        users_data.forEach(function(user){
          appendUser(user);
        });
@@ -62,7 +53,7 @@ $(function() {
     var user_id = $(this).data("user-id");
     var user_name = $(this).data("user-name");
     $('.chat-group-user').remove();
-      appendAddUser(user_id, user_name);
+      appendChatGroupUsers(user_id, user_name);
   });
 
   $(document).on("click", ".chat-group-user__btn--remove", function() {
