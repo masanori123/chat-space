@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
   before_action :set_messages, only:[:index, :create]
 
   def index
+    @user = current_user
     @message = Message.new
   end
 

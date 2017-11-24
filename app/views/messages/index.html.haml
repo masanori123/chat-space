@@ -22,11 +22,11 @@
   .chat-main__header
     .chat-main__header--group
       .chat-main__header--group-name
-        %p name
+        = @group.name
       .chat-main__header--group-edit-btn
-        %p edit
+        =link_to "EDIT", edit_group_path(@group)
       .chat-main__header--group-members
-        %p aaaaa
+        = @user.name
 
   .chat-main__body
     .chat-main__body--message-list#js-messages-list
