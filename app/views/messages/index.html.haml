@@ -31,7 +31,7 @@
   .chat-main__body
     .chat-main__body--message-list#js-messages-list
       - @messages.each do |m|
-        #message.chat-main__body--message-list__message
+        #message.chat-main__body--message-list__message{ "data-message-id": "#{m.id}"}
           .chat-main__body--message-list__message-name
             = m.user.name
           .chat-main__body--message-list__message-time
