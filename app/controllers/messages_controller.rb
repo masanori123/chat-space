@@ -5,6 +5,10 @@ class MessagesController < ApplicationController
   def index
     @user = current_user
     @message = Message.new
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create
@@ -31,7 +35,7 @@ class MessagesController < ApplicationController
   end
 
   def set_messages
-    @messages = @group.messages
+    @messages = @group.messages.includes(:user)
   end
 
 end
